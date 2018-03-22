@@ -1,6 +1,7 @@
 FROM ubuntu:12.04.5
 
-RUN apt-get update && apt-get install -y php5-fpm nginx supervisor && apt-get clean
+RUN apt-get update && \
+ apt-get install -y php5-fpm nginx supervisor cron && apt-get clean
 
 # configure nginx
 COPY vhost.conf /etc/nginx/sites-available/default
